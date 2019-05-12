@@ -6,12 +6,14 @@ Jena é uma API Java que poder ser usada para criar e manipular grafos RDF. Jena
 recursos, propriedades e literais.
 
 ### Algumas definições
-- **RDF** é um padrão para descrição de recursos.
-- **Recursos** são tudo aquilo que se pode identificar.
-- Recursos possuem **propriedades**; representadas por arcos, intitulados com o nome da propriedade.
-- O nome de uma propriedade é também uma URI.
-- Toda propriedade possui um **valor**, que pode ou não ser um literal.
-- Um **modelo** de dados representa propriedades nomeadas e seus valores.
-- O **modelo de dados RDF** é uma forma de representar sentenças RDF independetemente de sintaxe. 
-- Um **grafo RDF** é a representação de um modelo de dados RDF.
-- Uma **sentença** ou **tripla** é um arco (aresta) no modelo RDF, elas definem fatos sobre os recursos
+
+| Termo | Descrição |
+| 'RDF' | Padrão para descrição de recursos |
+| 'Recursos' | Tudo aquilo que se pode identificar |
+| 'Propriedades' | Definidas sob recursos, são representadas por arcos, intitulados com o nome da propriedade|
+| 'Valor' | Toda propriedade possui um valor (pode ou não ser um literal) |
+| 'Modelo' | Um modelo de dados representa propriedades nomeadas e seus valores |
+| 'Modelo de dados RDF' | Forma de representar sentenças RDF independetemente de sintaxe |
+| 'Grafo RDF' | Representação (modelagem matemática) de um modelo de dados RDF |
+| 'Sentença ou Tripla' | Definem fatos sobre os recursos. É um arco (aresta) no modelo RDF|
+
