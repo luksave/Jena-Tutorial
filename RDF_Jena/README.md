@@ -1,4 +1,5 @@
-# Introdução ao RDF com Jena
+Introdução ao RDF com Jena
+============
 Exemplos para estudo seguindo os tutoriais disponíveis no site [oficial](https://jena.apache.org/tutorials/rdf_api_pt.html).
 
 ## Introdução
@@ -8,6 +9,7 @@ recursos, propriedades e literais.
 ### Algumas definições
 
 | Termo | Descrição |
+| ----- | --------- |
 | 'RDF' | Padrão para descrição de recursos |
 | 'Recursos' | Tudo aquilo que se pode identificar |
 | 'Propriedades' | Definidas sob recursos, são representadas por arcos, intitulados com o nome da propriedade|
