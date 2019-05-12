@@ -26,17 +26,22 @@ import org.apache.jena.vocabulary.*;
 
 public class Tutorial01 extends Object {
     // some definitions
-    static String personURI    = "http://somewhere/JohnSmith";
-    static String fullName     = "John Smith";
+    static String personURI    = "http://somewhere/LucasFelipe";
+    static String givenName    = "Lucas Felipe";
+    static String familyName   = "Moreira Silva";
+    static String fullName     = givenName + " " + familyName;
     
       public static void main (String args[]) {
         // create an empty model
         Model model = ModelFactory.createDefaultModel();
 
-       // create the resource
-       Resource johnSmith = model.createResource(personURI);
-
-      // add the property
-      johnSmith.addProperty(VCARD.FN, fullName);
+       // create the resource and add properties (estilo cascata)
+       Resource lucasFelipe = model.createResource(personURI)
+								 .addProperty(VCARD.FN, fullName)
+								 .addProperty(VCARD.N,
+											  model.createResource()
+												   .addProperty(VCARD.Given, givenName)
+												   .addProperty(VCARD.Family, familyName));
+      
       }
 }
