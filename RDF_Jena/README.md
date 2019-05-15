@@ -4,12 +4,17 @@ Exemplos para estudo seguindo os tutoriais disponíveis no site [oficial](https:
 
 ## Introdução
 
+RDF surgiu de uma necessidade da Web Semântica que não podia ser atendida pelo XML, a representação de informações de forma
+ * Universal
+ * Legível por Máquinas
+ * Fácil de integrar em diferentes fontes
+
 ### RDF
 RDF (Framework para Descrição de Recursos), é um padrão para descrição de recursos, ou melhor, para tudo que pode ser identificado. Geralmente, o RDF é representado como um diagrama de nós e arcos, chamados grafos (vide exemplo).
 
 ![Figura 1 - Grafo JohnSmith](https://i.imgur.com/oSlJDVe.png)
 
-O código usado para criar esse grafo, ou modelo, pode ser encontrado [neste exemplo]().
+O código usado para criar esse grafo, ou modelo, pode ser encontrado [neste exemplo](https://github.com/luksave/Jena-Tutorial/blob/master/RDF_Jena/Model%20and%20Properties/tutorial_01_model_properties.java).
 
 Recursos possuem propriedades, as quais são atributos do recurso e podem possuir valor. Nos grafos, é comum que os recursos sejam identificados por elipses e uma URI. As propriedades são identificadas pelos arcos e seus valores pelos retângulos.
 
