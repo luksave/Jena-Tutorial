@@ -22,7 +22,8 @@ retorna um objeto do tipo RDFNode, que  uma superclasse comum de ambos Resource 
 instanceof para determinar qual e processá-lo de acordo.
 
 A execução deste exemplo deve ter como saída:
-e7c622fa-ae15-4e8f-9567-6ac5394477a8 http://www.w3.org/2001/vcard-rdf/3.0#Family  "Moreira Silva" .
-e7c622fa-ae15-4e8f-9567-6ac5394477a8 http://www.w3.org/2001/vcard-rdf/3.0#Given  "Lucas Felipe" .
-http://somewhere/LucasFelipe http://www.w3.org/2001/vcard-rdf/3.0#N e7c622fa-ae15-4e8f-9567-6ac5394477a8 .
-http://somewhere/LucasFelipe http://www.w3.org/2001/vcard-rdf/3.0#FN  "Lucas Felipe Moreira Silva" .
+
+    e7c622fa-ae15-4e8f-9567-6ac5394477a8 http://www.w3.org/2001/vcard-rdf/3.0#Family  "Moreira Silva" .
+    e7c622fa-ae15-4e8f-9567-6ac5394477a8 http://www.w3.org/2001/vcard-rdf/3.0#Given  "Lucas Felipe" .
+    http&#58;//somewhere/LucasFelipe http://www.w3.org/2001/vcard-rdf/3.0#N e7c622fa-ae15-4e8f-9567-6ac5394477a8 .
+    http&#58;//somewhere/LucasFelipe http://www.w3.org/2001/vcard-rdf/3.0#FN  "Lucas Felipe Moreira Silva" .
