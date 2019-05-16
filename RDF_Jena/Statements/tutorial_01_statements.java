@@ -1,5 +1,3 @@
-package jena.examples.rdf ;
-
 import org.apache.jena.rdf.model.*;
 import org.apache.jena.vocabulary.*;
 
@@ -7,6 +5,7 @@ import org.apache.jena.vocabulary.*;
  */
 
 public class tutorial_01_statements extends Object {
+
 	// Algumas definições 
 	static String personURI    = "http://somewhere/LucasFelipe";
 	static String givenName    = "Lucas Felipe";

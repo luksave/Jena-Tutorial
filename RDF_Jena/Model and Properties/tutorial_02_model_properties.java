@@ -1,5 +1,3 @@
-package jena.examples.rdf ;
-
 import org.apache.jena.rdf.model.*;
 import org.apache.jena.vocabulary.*;
 
