@@ -7,30 +7,31 @@ import org.apache.jena.vocabulary.*;
  */
 
 public class tutorial_02_statements extends Object {
-    // Algumas definições 
-    static String personURI    = "http://somewhere/LucasFelipe";
-    static String givenName    = "Lucas Felipe";
-    static String familyName   = "Moreira Silva";
-    static String fullName     = givenName + " " + familyName;
+	// Algumas definições 
+	static String personURI    = "http://somewhere/LucasFelipe";
+	static String givenName    = "Lucas Felipe";
+	static String familyName   = "Moreira Silva";
+	static String fullName     = givenName + " " + familyName;
     
-      public static void main (String args[]) {
-        // Cria um modelo vazio
-        Model model = ModelFactory.createDefaultModel();
+	public static void main (String args[]) {
 
-       	// Cria o recurso e adiciona algumas propriedades (estilo cascata)
-       	Resource lucasFelipe = model.createResource(personURI)
-								 .addProperty(VCARD.FN, fullName)
-								 .addProperty(VCARD.N, model.createResource()
-												   .addProperty(VCARD.Given, givenName)
-												   .addProperty(VCARD.Family, familyName));
-      
-      
-				// Lista as sentenças do modelo através da interface do iterador
-				StmtIterator iter = model.listStatements();
+	// Cria um modelo vazio
+	Model model = ModelFactory.createDefaultModel();
 
-				// Imprime o modelo criado no formato XML
-				model.write(System.out); 
+	// Cria o recurso e adiciona algumas propriedades (estilo cascata)
+	Resource lucasFelipe = model.createResource(personURI)
+				 .addProperty(VCARD.FN, fullName)
+				 .addProperty(VCARD.N, model.createResource()
+						   .addProperty(VCARD.Given, givenName)
+						   .addProperty(VCARD.Family, familyName));
 
-		}
+
+	// Lista as sentenças do modelo através da interface do iterador
+	StmtIterator iter = model.listStatements();
+
+	// Imprime o modelo criado no formato XML
+	model.write(System.out); 
+
+	}
 
 }
