@@ -26,7 +26,8 @@ Diversas organizações podem definir suas próprias definições para um recurs
 
 ### Jena
 Jena é uma API Java que poder ser usada para criar e manipular grafos RDF. Jena possui classes para representar grafos, 
-recursos, propriedades e literais.
+recursos, propriedades e literais. A aplicação é definido em termos de interfaces, logo seu código pode trabalhar com 
+diferentes implementações sem causar mudanças.
 
 
 ## Tabela de definições
