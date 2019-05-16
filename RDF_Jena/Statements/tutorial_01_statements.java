@@ -6,7 +6,7 @@ import org.apache.jena.vocabulary.*;
 /** Tutorial 1 Criando um modelo simples e listando suas sentenças
  */
 
-public class Tutorial01 extends Object {
+public class tutorial_01_statements extends Object {
     // Algumas definições 
     static String personURI    = "http://somewhere/LucasFelipe";
     static String givenName    = "Lucas Felipe";
