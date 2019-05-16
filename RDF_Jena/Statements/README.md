@@ -49,3 +49,4 @@ A execução deste exemplo deve ter como saída:
 		</rdf:Description>
 	</rdf:RDF>
 
+O método write() é flexível e pode aceitar como parâmetro diferentes especificações para a impressão do modelo. Quando write() recebe "RDF-XML-ABBREV", faz uso de particularidades da sintaxe abreviada de RDF/XML para criar um modelo mais compacto e para preservar nós vazios. Outro parâmetro que pode ser passado é "N-TRIPLE" que serve para imprimir o modelo como N-triplas. 
