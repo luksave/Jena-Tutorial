@@ -4,10 +4,12 @@
  
 ## Estrutura de Sentenças
 As sentenças são compostas por três partes:
+
+![Figura 2 - Estrutura de Sentença](https://i.imgur.com/MfI0rKN.png)
  
- * Sujeito - do qual se declara algo
- * Predicado - descritor de relacionamento
- * Objeto - Valor de uma propriedade ou recurso
+ * Sujeito - Do qual se declara algo - Exemplo: Lucas Felipe
+ * Predicado - Descritor de relacionamento - Exemplo: Tem idade
+ * Objeto - Valor de uma propriedade ou recurso - Exemplo: 22
  
 Essa organização é chamada de Tripla RDF, justamente por ser composta de três partes.
 
