@@ -24,7 +24,7 @@ public class tutorial_02_statements extends Object {
 	  
 	
 	
-			// Recupera o recurso e imprime seu identificador
+			// Recupera o recurso http://somewhere/LucasFelipe e imprime seu identificador
 	   	Resource recurso = model.getResource(personURI);
 	   	System.out.println(recurso.toString()+ "\n");
 	   	
