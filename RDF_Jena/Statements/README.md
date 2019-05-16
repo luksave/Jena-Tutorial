@@ -27,8 +27,8 @@ A execução deste exemplo deve ter como saída:
 
     e7c622fa-ae15-4e8f-9567-6ac5394477a8 http://www.w3.org/2001/vcard-rdf/3.0#Family  "Moreira Silva" .
     e7c622fa-ae15-4e8f-9567-6ac5394477a8 http://www.w3.org/2001/vcard-rdf/3.0#Given  "Lucas Felipe" .
-    http&#58;//somewhere/LucasFelipe http://www.w3.org/2001/vcard-rdf/3.0#N e7c622fa-ae15-4e8f-9567-6ac5394477a8 .
-    http&#58;//somewhere/LucasFelipe http://www.w3.org/2001/vcard-rdf/3.0#FN  "Lucas Felipe Moreira Silva" .
+    http://somewhere/LucasFelipe http://www.w3.org/2001/vcard-rdf/3.0#N e7c622fa-ae15-4e8f-9567-6ac5394477a8 .
+    http://somewhere/LucasFelipe http://www.w3.org/2001/vcard-rdf/3.0#FN  "Lucas Felipe Moreira Silva" .
     
 ## [Exemplo - Modelo RDF XML](https://github.com/luksave/Jena-Tutorial/blob/master/RDF_Jena/Statements/tutorial_02_statements.java)
 Jena possui métodos para ler e escrever RDF como XML. Estes métodos podem armazenar o modelo RDF em um arquivo e carregá-lo novamente em outro momento.
