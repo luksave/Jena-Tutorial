@@ -35,15 +35,15 @@ Este exemplo apresenta o mesmo modelo RDF do anterior, mas impesso no formato XM
 
 A execução deste exemplo deve ter como saída:
 
-		<rdf:RDF
-				xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-				xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#">
-			<rdf:Description rdf:about="http://somewhere/LucasFelipe">
-				<vcard:N rdf:parseType="Resource">
-				  <vcard:Family>Moreira Silva</vcard:Family>
-				  <vcard:Given>Lucas Felipe</vcard:Given>
-				</vcard:N>
-				<vcard:FN>Lucas Felipe Moreira Silva</vcard:FN>
-			</rdf:Description>
-		</rdf:RDF>
+	<rdf:RDF
+		xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+		xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#">
+		<rdf:Description rdf:about="http://somewhere/LucasFelipe">
+			<vcard:N rdf:parseType="Resource">
+			  <vcard:Family>Moreira Silva</vcard:Family>
+			  <vcard:Given>Lucas Felipe</vcard:Given>
+			</vcard:N>
+			<vcard:FN>Lucas Felipe Moreira Silva</vcard:FN>
+		</rdf:Description>
+	</rdf:RDF>
 
