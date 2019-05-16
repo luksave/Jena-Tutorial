@@ -25,9 +25,6 @@ public class tutorial_02_statements extends Object {
 						   .addProperty(VCARD.Family, familyName));
 
 
-	// Lista as sentenças do modelo através da interface do iterador
-	StmtIterator iter = model.listStatements();
-
 	// Imprime o modelo criado no formato XML
 	model.write(System.out); 
 
