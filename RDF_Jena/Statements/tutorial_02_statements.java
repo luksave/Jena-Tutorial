@@ -3,10 +3,10 @@ package jena.examples.rdf ;
 import org.apache.jena.rdf.model.*;
 import org.apache.jena.vocabulary.*;
 
-/** Tutorial 1 Criando um modelo simples e listando suas sentenças em Triplas
+/** Tutorial 2 Criando um modelo simples e listando suas sentenças em XML
  */
 
-public class tutorial_01_statements extends Object {
+public class tutorial_02_statements extends Object {
     // Algumas definições 
     static String personURI    = "http://somewhere/LucasFelipe";
     static String givenName    = "Lucas Felipe";
@@ -25,30 +25,11 @@ public class tutorial_01_statements extends Object {
 												   .addProperty(VCARD.Family, familyName));
       
       
-
 				// Lista as sentenças do modelo através da interface do iterador
 				StmtIterator iter = model.listStatements();
 
-				// Imprime o modelo criado em Triplas
-				while (iter.hasNext()) {
-					Statement stmt      = iter.nextStatement();  // Obtém a próxima sentença
-					Resource  subject   = stmt.getSubject();     // Obtém o sujeito da sentença
-					Property  predicate = stmt.getPredicate();   // Obtém o predicado da sentença
-					RDFNode   object    = stmt.getObject();      // Obtém o objeto da sentença
-
-					System.out.print(subject.toString());
-					System.out.print(" " + predicate.toString() + " ");
-					
-					if (object instanceof Resource) 
-						System.out.print(object.toString());
-
-					// Se o objeto é na verdade um literal
-					else 
-						System.out.print(" \"" + object.toString() + "\"");
-
-					System.out.println(" .");
-
-				} 
+				// Imprime o modelo criado no formato XML
+				model.write(System.out); 
 
 		}
 
