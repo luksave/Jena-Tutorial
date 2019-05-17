@@ -31,6 +31,8 @@ public class Tutorial_03_operations extends Object {
 		Model modelB = model2.difference(model1);
 
 		// Impressão dos grafos resultantes como RDF/XML
+		// A = 1 - 2
+		// B = 2 - 1
 		modelA.write(System.out, "RDF/XML-ABBREV");
 		System.out.println();
 		modelB.write(System.out, "RDF/XML-ABBREV");
