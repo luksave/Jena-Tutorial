@@ -20,7 +20,7 @@ public class Tutorial_03_operations extends Object {
 		InputStream in1 = FileManager.get().open(inputFileName1);
 		InputStream in2 = FileManager.get().open(inputFileName2);
 
-			if (in1 == null) throw new IllegalArgumentException( "File: " + inputFileName1 + " not found");
+		if (in1 == null) throw new IllegalArgumentException( "File: " + inputFileName1 + " not found");
 		if (in2 == null) throw new IllegalArgumentException( "File: " + inputFileName2 + " not found");
 
 		model1.read( in1, "" );
