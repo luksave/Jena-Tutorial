@@ -20,7 +20,7 @@ Ele seleciona as sentenças em que o sujeito bate com subject e/ou um predicado 
 
 		Selector selector = new SimpleSelector(null, VCARD.FN, null);
 
-O [exemplo 1]() realiza uma busca em um banco de dados RDF fazendo uso de model.listResourcesWithProperty(VCARD.FN); para iterar sobre recursos com a propriedade VCARD.FN. Enquanto [exemplo 2]() realiza o mesmo trabalho fazendo uso de um selector.
+O [exemplo 1](https://github.com/luksave/Jena-Tutorial/blob/master/RDF_Jena/Querys/Tutorial_01_querys.java) realiza uma busca em um banco de dados RDF fazendo uso de model.listResourcesWithProperty(VCARD.FN); para iterar sobre recursos com a propriedade VCARD.FN. Enquanto [exemplo 2](https://github.com/luksave/Jena-Tutorial/blob/master/RDF_Jena/Querys/Tutorial_02_querys.java) realiza o mesmo trabalho fazendo uso de um selector.
 
-Uma das vantagens do uso de um selector é poder refinar as consultas sobrescrevendo o método selects(...), como no [exemplo 3](). Isso garante que, após o resultado da consulta de SimpleSelector, o resultado seja casado novamente com algum padrão defino; no exemplo, que o final da sentença tenha a cadeia "Smith".
+Uma das vantagens do uso de um selector é poder refinar as consultas sobrescrevendo o método selects(...), como no [exemplo 3](https://github.com/luksave/Jena-Tutorial/blob/master/RDF_Jena/Querys/Tutorial_03_querys.java). Isso garante que, após o resultado da consulta de SimpleSelector, o resultado seja casado novamente com algum padrão defino; no exemplo, que o final da sentença tenha a cadeia "Smith".
 
