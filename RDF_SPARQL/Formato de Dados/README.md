@@ -4,47 +4,47 @@
 
 # Triplas escritas
 
-```		
+```RDF		
 	@prefix vCard:   <http://www.w3.org/2001/vcard-rdf/3.0#> .
 	@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 	@prefix :        <#> .
 
 	<http://somewhere/MattJones/>
-			vCard:FN    "Matt Jones" ;
-			vCard:N     [ vCard:Family
-														    "Jones" ;
-										vCard:Given
-														    "Matthew"
-									] .
+		vCard:FN    "Matt Jones" ;
+		vCard:N     [ 	vCard:Family
+					    "Jones" ;
+				vCard:Given
+					    "Matthew"
+	] .
 
 	<http://somewhere/RebeccaSmith/>
 			vCard:FN    "Becky Smith" ;
-			vCard:N     [ vCard:Family
-														    "Smith" ;
-										vCard:Given
-														    "Rebecca"
-									] .
+			vCard:N     [ 	vCard:Family
+						    "Smith" ;
+					vCard:Given
+						    "Rebecca"
+	] .
 
 	<http://somewhere/JohnSmith/>
 			vCard:FN    "John Smith" ;
-			vCard:N     [ vCard:Family
-														    "Smith" ;
-										vCard:Given
-														    "John"
-									] .
+			vCard:N     [ 	vCard:Family
+						    "Smith" ;
+					vCard:Given
+						    "John"
+	] .
 
 	<http://somewhere/SarahJones/>
 			vCard:FN    "Sarah Jones" ;
-			vCard:N     [ vCard:Family
-														    "Jones" ;
-										vCard:Given
-														    "Sarah"
-									] .
+			vCard:N     [ 	vCard:Family
+						    "Jones" ;
+					vCard:Given
+						    "Sarah"
+	] .
 ```
 
 # Triplas escritas de forma mais explícitas
 
-```
+```RDF
 	@prefix vCard:   <http://www.w3.org/2001/vcard-rdf/3.0#> .
 	@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
