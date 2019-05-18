@@ -1,0 +1,8 @@
+SELECT ?givenName
+WHERE
+  { ?y  <http://www.w3.org/2001/vcard-rdf/3.0#Family>  "Smith" .
+    ?y  <http://www.w3.org/2001/vcard-rdf/3.0#Given>  ?givenName .
+  }
+
+#Primeiro foi selecionado os recursos cujos nomes de Family eram Smith
+#Em seguida, deste conjunto da primeira clausula, recuperou-se o Given de cada um

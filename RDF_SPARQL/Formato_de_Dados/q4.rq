@@ -1,0 +1,11 @@
+PREFIX vcard:      <http://www.w3.org/2001/vcard-rdf/3.0#>
+
+SELECT ?y ?givenName
+WHERE
+ { ?y vcard:Family "Smith" .
+   ?y vcard:Given  ?givenName .
+ }
+
+# É possível atribuir um prefixo longo a uma variável e usá-la dentro da query
+# Se o recurso for um nó vazio este será identificado com _b0, _b1, etc.
+# Nós vazios não tem significado isoladamente, mas no contexto geral sim. (hasAdress -> blank_node -> cidade, estado, país, bairro, número)
