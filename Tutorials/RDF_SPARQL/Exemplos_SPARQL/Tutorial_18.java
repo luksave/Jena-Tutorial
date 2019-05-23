@@ -41,7 +41,6 @@ public class Tutorial18 {
 				"  ?bnode vcard:Family  ?sobrenome .}" +
 						" GROUP BY ?sobrenome";
 
-
 		/*
 		* querySPARQL - A string de consulta na linguagem SPARQL
 		* usarResultSet - Imprimir resultados da consulta na forma tabular (true) ou em RDF/XML padrão (false)
