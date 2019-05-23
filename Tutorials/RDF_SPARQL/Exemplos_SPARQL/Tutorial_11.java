@@ -32,15 +32,15 @@ public class Tutorial11 {
 
 	public static void main (String args[]) {
 
-  	//Retorna os nomes completos pela propriedade VCARD.FN de todos 
-  	//os recursos e também as idades, caso haja, pela propriedade INFO.AGE (caso haja -> OPTIONAL)
-    String query = 	"PREFIX info:    <http://somewhere/peopleInfo#> "+
-    								"PREFIX vcard:   <http://www.w3.org/2001/vcard-rdf/3.0#> "+
-										"SELECT ?name ?age " +
-										"WHERE " + 
-										"{ ?person vcard:FN  ?name ." +
-												"  OPTIONAL { ?person info:age ?age }" +
-										"}";
+		//Retorna os nomes completos pela propriedade VCARD.FN de todos 
+		//os recursos e também as idades, caso haja, pela propriedade INFO.AGE (caso haja -> OPTIONAL)
+		String query = 	"PREFIX info:    <http://somewhere/peopleInfo#> "+
+				"PREFIX vcard:   <http://www.w3.org/2001/vcard-rdf/3.0#> "+
+				"SELECT ?name ?age " +
+				"WHERE " + 
+				"{ ?person vcard:FN  ?name ." +
+					"  OPTIONAL { ?person info:age ?age }" +
+				"}";
 
 
       
@@ -68,7 +68,7 @@ public class Tutorial11 {
 		else if(file == 2)	inputFileName  = "vc-db-2.rdf";
 		else if(file == 3)	inputFileName  = "vc-db-3.rdf";
 		else if(file == 4)	inputFileName  = "vc-db-4.rdf";
-		else								throw new IllegalArgumentException("Arquivo: " + inputFileName + " não encontrado!");
+		else			throw new IllegalArgumentException("Arquivo: " + inputFileName + " não encontrado!");
 
 
 		// Criação de um MODELO RDF vazio
