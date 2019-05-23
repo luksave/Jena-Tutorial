@@ -33,12 +33,11 @@ public class Tutorial22 {
 	public static void main (String args[]) {
 
 		//Retorna a menor e a maior das idades dos recursos
-    	String query =	"PREFIX info:    <http://somewhere/peopleInfo#> "+
-											"PREFIX vcard:   <http://www.w3.org/2001/vcard-rdf/3.0#> "+
-											"SELECT (MIN(?age) AS ?maisNova) (MAX(?age) AS ?maisVelha)" +
-											"WHERE " + 
-											"{ ?person info:age  ?age . }";
-
+		String query =	"PREFIX info:    <http://somewhere/peopleInfo#> "+
+				"PREFIX vcard:   <http://www.w3.org/2001/vcard-rdf/3.0#> "+
+				"SELECT (MIN(?age) AS ?maisNova) (MAX(?age) AS ?maisVelha)" +
+				"WHERE " + 
+				"{ ?person info:age  ?age . }";
 
 		/*
 		* querySPARQL - A string de consulta na linguagem SPARQL
@@ -63,7 +62,7 @@ public class Tutorial22 {
 		else if(file == 2)	inputFileName  = "vc-db-2.rdf";
 		else if(file == 3)	inputFileName  = "vc-db-3.rdf";
 		else if(file == 4)	inputFileName  = "vc-db-4.rdf";
-		else								throw new IllegalArgumentException("Arquivo: " + inputFileName + " não encontrado!");
+		else			throw new IllegalArgumentException("Arquivo: " + inputFileName + " não encontrado!");
 
 
 		// Criação de um MODELO RDF vazio
