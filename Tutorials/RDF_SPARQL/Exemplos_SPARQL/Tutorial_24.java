@@ -34,15 +34,12 @@ public class Tutorial24 {
 
 		//Retorna V se existe um recurso que tenha idade, nome completo e sobrenome declarados
 		//É a falta de parâmetro de comparação no ASK que permite fazer essa dedução?
-    String query = "PREFIX info:    <http://somewhere/peopleInfo#> "+
-                   "PREFIX vcard:      <http://www.w3.org/2001/vcard-rdf/3.0#>"+
-                   "ASK " + 
-                   "{ ?suj  info:age  ?age ; " +
-                   "        vcard:FN  ?nomeCompleto ;" +
-                   "        vcard:N   [vcard:Family ?sobrenome]." +
-                   "}";
-
-
+		String query = 	"PREFIX info:       <http://somewhere/peopleInfo#> "+
+				"PREFIX vcard:      <http://www.w3.org/2001/vcard-rdf/3.0#>"+
+				"ASK " + 
+				"{ ?suj  info:age  ?age ; " +
+				"        vcard:FN  ?nomeCompleto ;" +
+				"        vcard:N   [vcard:Family ?sobrenome].}";
 
 		/*
 		* querySPARQL - A string de consulta na linguagem SPARQL
@@ -67,7 +64,7 @@ public class Tutorial24 {
 		else if(file == 2)	inputFileName  = "vc-db-2.rdf";
 		else if(file == 3)	inputFileName  = "vc-db-3.rdf";
 		else if(file == 4)	inputFileName  = "vc-db-4.rdf";
-		else								throw new IllegalArgumentException("Arquivo: " + inputFileName + " não encontrado!");
+		else			throw new IllegalArgumentException("Arquivo: " + inputFileName + " não encontrado!");
 
 
 		// Criação de um MODELO RDF vazio
@@ -87,10 +84,10 @@ public class Tutorial24 {
 		QueryExecution qe = QueryExecutionFactory.create(query, model);
 
 		//Método execAsk() retorna um valor booleano indicando se o padrão de grafo casou os dados de entrada ou não
-  	boolean result = qe.execAsk();
-  	qe.close();
-  	
-  	System.out.println(result);
+		boolean result = qe.execAsk();
+		qe.close();
+
+		System.out.println(result);
 
 	}
 
