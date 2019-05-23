@@ -34,8 +34,8 @@ public class Tutorial03 {
 
 		//Busca todos os sujeitos e respectivos objetos associados a VCARD.FN
         String query = 	"SELECT ?x ?name " +
-        								"WHERE " + 
-        								"{ ?x <http://www.w3.org/2001/vcard-rdf/3.0#FN> ?name }";
+			"WHERE " + 
+			"{ ?x <http://www.w3.org/2001/vcard-rdf/3.0#FN> ?name }";
 
 		/*
 		* querySPARQL - A string de consulta na linguagem SPARQL
@@ -60,7 +60,7 @@ public class Tutorial03 {
 		else if(file == 2)	inputFileName  = "vc-db-2.rdf";
 		else if(file == 3)	inputFileName  = "vc-db-3.rdf";
 		else if(file == 4)	inputFileName  = "vc-db-4.rdf";
-		else								throw new IllegalArgumentException("Arquivo: " + inputFileName + " não encontrado!");
+		else			throw new IllegalArgumentException("Arquivo: " + inputFileName + " não encontrado!");
 
 
 		// Criação de um MODELO RDF vazio
