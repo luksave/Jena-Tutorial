@@ -34,9 +34,8 @@ public class Tutorial31 {
 
 		//Retorna tudo sobre recursos que têm um objeto com valor de propriedade 'John Smith'
 		String query =  "DESCRIBE * " +
-										"WHERE { " +
-										" ?suj ?pred 'John Smith'" +
-										"}"; 
+				"WHERE { " +
+				" ?suj ?pred 'John Smith'}"; 
 
 		/*
 		* querySPARQL - A string de consulta na linguagem SPARQL
@@ -61,7 +60,7 @@ public class Tutorial31 {
 		else if(file == 2)	inputFileName  = "vc-db-2.rdf";
 		else if(file == 3)	inputFileName  = "vc-db-3.rdf";
 		else if(file == 4)	inputFileName  = "vc-db-4.rdf";
-		else								throw new IllegalArgumentException("Arquivo: " + inputFileName + " não encontrado!");
+		else			throw new IllegalArgumentException("Arquivo: " + inputFileName + " não encontrado!");
 
 
 		// Criação de um MODELO RDF vazio
@@ -81,10 +80,10 @@ public class Tutorial31 {
 		QueryExecution qe = QueryExecutionFactory.create(query, model);
 
 		//Método execConstruct() executa consultas CONSTRUCT e retorna um grafo RDF (formatação TURTLE)
-  	Model resultModel = qe.execConstruct() ;
-  	qe.close() ;
-  	
-    resultModel.write(System.out, "TURTLE");
+		Model resultModel = qe.execConstruct() ;
+		qe.close() ;
+
+		resultModel.write(System.out, "TURTLE");
 
 	}
 
