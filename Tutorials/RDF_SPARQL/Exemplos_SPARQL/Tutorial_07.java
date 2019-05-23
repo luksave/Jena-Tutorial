@@ -33,15 +33,14 @@ public class Tutorial07 {
 	public static void main (String args[]) {
 
 		//Casamento de Strings, semelhante ao LIKE do SQL
-    //Sintaxe: FILTER regex(?x, "pattern" [, "flags"])
-    //Flag 'i' significa casamento de padrão insensível à caixa
+		//Sintaxe: FILTER regex(?x, "pattern" [, "flags"])
+		//Flag 'i' significa casamento de padrão insensível à caixa
 		//TRADUÇÃO: Retorna os objetos do tipo Literal cujos valores tenham os caracteres 'r' ou 'R' 
-    String query = 	"PREFIX vcard:      <http://www.w3.org/2001/vcard-rdf/3.0#>"+
-    								"SELECT ?g " +
-    								"WHERE " + 
-    								"{ ?y vcard:Given ?g ." +
-    										" FILTER regex(?g, 'r', 'i') }";
-      
+		String query = 	"PREFIX vcard:      <http://www.w3.org/2001/vcard-rdf/3.0#>"+
+				"SELECT ?g " +
+				"WHERE " + 
+				"{ ?y vcard:Given ?g ." +
+					" FILTER regex(?g, 'r', 'i') }";
 
 		/*
 		* querySPARQL - A string de consulta na linguagem SPARQL
@@ -66,7 +65,7 @@ public class Tutorial07 {
 		else if(file == 2)	inputFileName  = "vc-db-2.rdf";
 		else if(file == 3)	inputFileName  = "vc-db-3.rdf";
 		else if(file == 4)	inputFileName  = "vc-db-4.rdf";
-		else								throw new IllegalArgumentException("Arquivo: " + inputFileName + " não encontrado!");
+		else			throw new IllegalArgumentException("Arquivo: " + inputFileName + " não encontrado!");
 
 
 		// Criação de um MODELO RDF vazio
