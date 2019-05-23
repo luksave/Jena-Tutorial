@@ -34,12 +34,12 @@ public class Tutorial13 {
 
 		//Busca por nomes e idades de recursos, recursos esses ordenados decrescentemente por idade
 		String query =  "PREFIX info:    <http://somewhere/peopleInfo#> "+
-										"PREFIX vcard:   <http://www.w3.org/2001/vcard-rdf/3.0#> "+
-										"SELECT ?name ?age " +
-										"WHERE " + 
-										"{ ?person vcard:FN  ?name ." +
-										"  ?person info:age ?age ." +
-												"} ORDER BY desc(?age)";
+				"PREFIX vcard:   <http://www.w3.org/2001/vcard-rdf/3.0#> "+
+				"SELECT ?name ?age " +
+				"WHERE " + 
+				"{ ?person vcard:FN  ?name ." +
+				"  ?person info:age ?age .}" +
+					" ORDER BY desc(?age)";
 
 		/*
 		* querySPARQL - A string de consulta na linguagem SPARQL
@@ -64,7 +64,7 @@ public class Tutorial13 {
 		else if(file == 2)	inputFileName  = "vc-db-2.rdf";
 		else if(file == 3)	inputFileName  = "vc-db-3.rdf";
 		else if(file == 4)	inputFileName  = "vc-db-4.rdf";
-		else								throw new IllegalArgumentException("Arquivo: " + inputFileName + " não encontrado!");
+		else			throw new IllegalArgumentException("Arquivo: " + inputFileName + " não encontrado!");
 
 
 		// Criação de um MODELO RDF vazio
