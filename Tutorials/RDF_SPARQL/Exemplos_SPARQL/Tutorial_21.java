@@ -33,14 +33,13 @@ public class Tutorial21 {
 	public static void main (String args[]) {
 
 		//Retorna a média das idades dos recursos, agrupadas por idade, mas apenas onde a média é maior ou igual a 24 (HAVING)
-  	String query =	"PREFIX info:    <http://somewhere/peopleInfo#> "+
-										"PREFIX vcard:   <http://www.w3.org/2001/vcard-rdf/3.0#> "+
-										"SELECT (AVG(?age) AS ?total) " +
-										"WHERE " + 
-										"{ ?person info:age  ?age . } " +
-										    "GROUP BY ?age " +
-												"HAVING (AVG(?age) >= 24)";
-
+		String query =	"PREFIX info:    <http://somewhere/peopleInfo#> "+
+				"PREFIX vcard:   <http://www.w3.org/2001/vcard-rdf/3.0#> "+
+				"SELECT (AVG(?age) AS ?total) " +
+				"WHERE " + 
+				"{ ?person info:age  ?age . } " +
+				    "GROUP BY ?age " +
+					"HAVING (AVG(?age) >= 24)";
 
 		/*
 		* querySPARQL - A string de consulta na linguagem SPARQL
@@ -65,7 +64,7 @@ public class Tutorial21 {
 		else if(file == 2)	inputFileName  = "vc-db-2.rdf";
 		else if(file == 3)	inputFileName  = "vc-db-3.rdf";
 		else if(file == 4)	inputFileName  = "vc-db-4.rdf";
-		else								throw new IllegalArgumentException("Arquivo: " + inputFileName + " não encontrado!");
+		else			throw new IllegalArgumentException("Arquivo: " + inputFileName + " não encontrado!");
 
 
 		// Criação de um MODELO RDF vazio
