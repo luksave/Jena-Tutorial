@@ -32,18 +32,16 @@ public class Tutorial06 {
 
 	public static void main (String args[]) {
 
-	  //Retorna o objeto (literal ou URI, nomeado "primeiroNome") do predicado VCARD.Given de todos os recursos 
-  	//cujo predicado VCARD.Family tem como objeto o literal "Smith"
-  	
-		//ATENÇÃO 1: uso de prefixo para deixar a consulta mais legível
-  	//ATENÇÃO 2: ?s é a variável que armazenará as referências a nós anônimos (blank nodes)   
-    String query = 	"PREFIX vcard:      <http://www.w3.org/2001/vcard-rdf/3.0#>"+
-                  	"SELECT ?s ?primeiroNome " + 
-		      		      "WHERE " + 
-    	              "{ ?s  vcard:Family  'Smith' . " +
-    					      "  ?s  vcard:Given  ?primeiroNome ." +
-    	              "}";
+		//Retorna o objeto (literal ou URI, nomeado "primeiroNome") do predicado VCARD.Given de todos os recursos 
+		//cujo predicado VCARD.Family tem como objeto o literal "Smith"
 
+		//ATENÇÃO 1: uso de prefixo para deixar a consulta mais legível
+		//ATENÇÃO 2: ?s é a variável que armazenará as referências a nós anônimos (blank nodes)   
+		String query = 	"PREFIX vcard:      <http://www.w3.org/2001/vcard-rdf/3.0#>"+
+				"SELECT ?s ?primeiroNome " + 
+			      	"WHERE " + 
+				"{ ?s  vcard:Family  'Smith' . " +
+				"  ?s  vcard:Given  ?primeiroNome .}";
 
 		/*
 		* querySPARQL - A string de consulta na linguagem SPARQL
@@ -68,7 +66,7 @@ public class Tutorial06 {
 		else if(file == 2)	inputFileName  = "vc-db-2.rdf";
 		else if(file == 3)	inputFileName  = "vc-db-3.rdf";
 		else if(file == 4)	inputFileName  = "vc-db-4.rdf";
-		else								throw new IllegalArgumentException("Arquivo: " + inputFileName + " não encontrado!");
+		else			throw new IllegalArgumentException("Arquivo: " + inputFileName + " não encontrado!");
 
 
 		// Criação de um MODELO RDF vazio
