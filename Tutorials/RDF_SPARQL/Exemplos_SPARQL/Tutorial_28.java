@@ -32,18 +32,15 @@ public class Tutorial28 {
 
 	public static void main (String args[]) {
 
-
-	//Retorna um grafo RDF copiando apenas os recursos com idade superior a 23 anos 
-	String query =  "PREFIX info:    <http://somewhere/peopleInfo#> "+
-		              "PREFIX vcard:      <http://www.w3.org/2001/vcard-rdf/3.0#>"+
-		              "CONSTRUCT " + 
-		              "{ ?suj   ?pred     ?obj ." +
-		              "}" +
-		              "WHERE " +
-		              "{ ?suj   info:age  ?age ;" +
-		              "          ?pred    ?obj ." +
- 				   				"  FILTER (?age >= 24) " +                       
-                  "}";
+		//Retorna um grafo RDF copiando apenas os recursos com idade superior a 23 anos 
+		String query =  "PREFIX info:       <http://somewhere/peopleInfo#> "+
+				"PREFIX vcard:      <http://www.w3.org/2001/vcard-rdf/3.0#>"+
+				"CONSTRUCT " + 
+				"{ ?suj   ?pred     ?obj .}" +
+				"WHERE " +
+				"{ ?suj   info:age  ?age ;" +
+				"          ?pred    ?obj ." +
+					"  FILTER (?age >= 24) }";
 
 		/*
 		* querySPARQL - A string de consulta na linguagem SPARQL
@@ -68,7 +65,7 @@ public class Tutorial28 {
 		else if(file == 2)	inputFileName  = "vc-db-2.rdf";
 		else if(file == 3)	inputFileName  = "vc-db-3.rdf";
 		else if(file == 4)	inputFileName  = "vc-db-4.rdf";
-		else								throw new IllegalArgumentException("Arquivo: " + inputFileName + " não encontrado!");
+		else			throw new IllegalArgumentException("Arquivo: " + inputFileName + " não encontrado!");
 
 
 		// Criação de um MODELO RDF vazio
@@ -88,10 +85,10 @@ public class Tutorial28 {
 		QueryExecution qe = QueryExecutionFactory.create(query, model);
 
 		//Método execConstruct() executa consultas CONSTRUCT e retorna um grafo RDF (formatação TURTLE)
-  	Model resultModel = qe.execConstruct() ;
-  	qe.close() ;
-  	
-    resultModel.write(System.out, "TURTLE");
+		Model resultModel = qe.execConstruct() ;
+		qe.close() ;
+
+		resultModel.write(System.out, "TURTLE");
 
 	}
 
