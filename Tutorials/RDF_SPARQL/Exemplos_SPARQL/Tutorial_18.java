@@ -34,12 +34,12 @@ public class Tutorial18 {
 
 		//Retorna o sobrenome dos recursos e quantos deles possuem o mesmo sobrenome
 		String query =	"PREFIX info:    <http://somewhere/peopleInfo#> "+
-										"PREFIX vcard:   <http://www.w3.org/2001/vcard-rdf/3.0#> "+
-										"SELECT ?sobrenome (COUNT(?sobrenome) AS ?total) " +
-										"WHERE " + 
-										"{ ?person ?prop  ?bnode ." +
-										"  ?bnode vcard:Family  ?sobrenome ." +
-												"} GROUP BY ?sobrenome";
+				"PREFIX vcard:   <http://www.w3.org/2001/vcard-rdf/3.0#> "+
+				"SELECT ?sobrenome (COUNT(?sobrenome) AS ?total) " +
+				"WHERE " + 
+				"{ ?person ?prop  ?bnode ." +
+				"  ?bnode vcard:Family  ?sobrenome .}" +
+						" GROUP BY ?sobrenome";
 
 
 		/*
@@ -65,7 +65,7 @@ public class Tutorial18 {
 		else if(file == 2)	inputFileName  = "vc-db-2.rdf";
 		else if(file == 3)	inputFileName  = "vc-db-3.rdf";
 		else if(file == 4)	inputFileName  = "vc-db-4.rdf";
-		else								throw new IllegalArgumentException("Arquivo: " + inputFileName + " não encontrado!");
+		else			throw new IllegalArgumentException("Arquivo: " + inputFileName + " não encontrado!");
 
 
 		// Criação de um MODELO RDF vazio
