@@ -33,15 +33,15 @@ public class Tutorial08 {
 	public static void main (String args[]) {
 
 		//Casamento de Strings, semelhante ao LIKE do SQL
-    //Sintaxe: FILTER (cláusula)
-    //TRADUÇÃO: Retorna apenas os recursos cujo valor da propriedade INFO.AGE é maior ou igual a 24
-    String query = 	"PREFIX info: <http://somewhere/peopleInfo#>"+
-				    				"SELECT ?resource " +
-    								"WHERE " + 
-    								"{ ?resource info:age ?age ." +
-    										"  FILTER (?age >= 24) }";
+		//Sintaxe: FILTER (cláusula)
+		//TRADUÇÃO: Retorna apenas os recursos cujo valor da propriedade INFO.AGE é maior ou igual a 24
+		String query = 	"PREFIX info: <http://somewhere/peopleInfo#>"+
+				"SELECT ?resource " +
+				"WHERE " + 
+				"{ ?resource info:age ?age ." +
+					"  FILTER (?age >= 24) }";
 
-      
+
 
 		/*
 		* querySPARQL - A string de consulta na linguagem SPARQL
@@ -66,7 +66,7 @@ public class Tutorial08 {
 		else if(file == 2)	inputFileName  = "vc-db-2.rdf";
 		else if(file == 3)	inputFileName  = "vc-db-3.rdf";
 		else if(file == 4)	inputFileName  = "vc-db-4.rdf";
-		else								throw new IllegalArgumentException("Arquivo: " + inputFileName + " não encontrado!");
+		else			throw new IllegalArgumentException("Arquivo: " + inputFileName + " não encontrado!");
 
 
 		// Criação de um MODELO RDF vazio
