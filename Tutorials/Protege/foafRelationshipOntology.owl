@@ -10,4 +10,136 @@
                                                                        owl:imports <http://purl.org/vocab/relationship/> ,
                                                                                    <http://xmlns.com/foaf/0.1/> .
 
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/vocab/relationship/siblingOf
+<http://purl.org/vocab/relationship/siblingOf> rdf:type owl:TransitiveProperty .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/lucas/ontologies/2019/4/foafRelationship#Ana_Beatriz
+:Ana_Beatriz rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/lucas/ontologies/2019/4/foafRelationship#Anerito
+:Anerito rdf:type owl:NamedIndividual ;
+         <http://purl.org/vocab/relationship/grandparentOf> :Lucas ;
+         <http://purl.org/vocab/relationship/livesWith> :Helena ;
+         <http://purl.org/vocab/relationship/parentOf> :Aurimar .
+
+
+###  http://www.semanticweb.org/lucas/ontologies/2019/4/foafRelationship#Anerito_Jr
+:Anerito_Jr rdf:type owl:NamedIndividual ;
+            <http://purl.org/vocab/relationship/childOf> :Anerito ;
+            <http://purl.org/vocab/relationship/livesWith> :Guilherme ;
+            <http://purl.org/vocab/relationship/siblingOf> :Aurimar ,
+                                                           :Rodrigo .
+
+
+###  http://www.semanticweb.org/lucas/ontologies/2019/4/foafRelationship#Aurimar
+:Aurimar rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/lucas/ontologies/2019/4/foafRelationship#Clélia
+:Clélia rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/lucas/ontologies/2019/4/foafRelationship#Célia
+:Célia rdf:type owl:NamedIndividual ;
+       <http://purl.org/vocab/relationship/parentOf> :Jeane .
+
+
+###  http://www.semanticweb.org/lucas/ontologies/2019/4/foafRelationship#Geovana
+:Geovana rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/lucas/ontologies/2019/4/foafRelationship#Guilherme
+:Guilherme rdf:type owl:NamedIndividual ;
+           <http://purl.org/vocab/relationship/livesWith> :Júlia .
+
+
+###  http://www.semanticweb.org/lucas/ontologies/2019/4/foafRelationship#Helena
+:Helena rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/lucas/ontologies/2019/4/foafRelationship#Henrique
+:Henrique rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/lucas/ontologies/2019/4/foafRelationship#Jeane
+:Jeane rdf:type owl:NamedIndividual ;
+       <http://purl.org/vocab/relationship/livesWith> :Aurimar ;
+       <http://purl.org/vocab/relationship/parentOf> :Geovana ,
+                                                     :Lucas ;
+       <http://purl.org/vocab/relationship/spouseOf> :Aurimar .
+
+
+###  http://www.semanticweb.org/lucas/ontologies/2019/4/foafRelationship#Júlia
+:Júlia rdf:type owl:NamedIndividual ;
+       <http://purl.org/vocab/relationship/livesWith> :Clélia .
+
+
+###  http://www.semanticweb.org/lucas/ontologies/2019/4/foafRelationship#Lidiane
+:Lidiane rdf:type owl:NamedIndividual ;
+         <http://purl.org/vocab/relationship/livesWith> :Rodrigo_Jr ;
+         <http://purl.org/vocab/relationship/parentOf> :Ana_Beatriz ,
+                                                       :Rodrigo_Jr ;
+         <http://purl.org/vocab/relationship/spouseOf> :Rodrigo .
+
+
+###  http://www.semanticweb.org/lucas/ontologies/2019/4/foafRelationship#Lucas
+:Lucas rdf:type owl:NamedIndividual ;
+       owl:sameAs :Lucas_Felipe ;
+       <http://purl.org/vocab/relationship/closeFriendOf> :Henrique ;
+       <http://purl.org/vocab/relationship/friendOf> :Lucas_Pacífico ;
+       <http://purl.org/vocab/relationship/grandchildOf> :Helena ;
+       <http://purl.org/vocab/relationship/livesWith> :Aurimar ,
+                                                      :Geovana .
+
+
+###  http://www.semanticweb.org/lucas/ontologies/2019/4/foafRelationship#Lucas_Felipe
+:Lucas_Felipe rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/lucas/ontologies/2019/4/foafRelationship#Lucas_Pacífico
+:Lucas_Pacífico rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/lucas/ontologies/2019/4/foafRelationship#Pollyana
+:Pollyana rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/lucas/ontologies/2019/4/foafRelationship#Renato
+:Renato rdf:type owl:NamedIndividual ;
+        <http://purl.org/vocab/relationship/mentorOf> :Lucas ,
+                                                      :Pollyana .
+
+
+###  http://www.semanticweb.org/lucas/ontologies/2019/4/foafRelationship#Rodrigo
+:Rodrigo rdf:type owl:NamedIndividual ;
+         <http://purl.org/vocab/relationship/childOf> :Anerito .
+
+
+###  http://www.semanticweb.org/lucas/ontologies/2019/4/foafRelationship#Rodrigo_Jr
+:Rodrigo_Jr rdf:type owl:NamedIndividual ;
+            <http://purl.org/vocab/relationship/livesWith> :Ana_Beatriz ,
+                                                           :Rodrigo .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Lucas
+                        :Lucas_Pacífico
+                      )
+] .
+
+
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
