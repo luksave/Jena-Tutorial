@@ -15,7 +15,8 @@
 #################################################################
 
 ###  http://purl.org/vocab/relationship/siblingOf
-<http://purl.org/vocab/relationship/siblingOf> rdf:type owl:TransitiveProperty .
+<http://purl.org/vocab/relationship/siblingOf> rdf:type owl:ObjectProperty ,
+                                                        owl:TransitiveProperty .
 
 
 #################################################################
