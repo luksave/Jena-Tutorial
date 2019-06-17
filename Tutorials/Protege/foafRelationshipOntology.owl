@@ -11,12 +11,78 @@
                                                                                    <http://xmlns.com/foaf/0.1/> .
 
 #################################################################
+#    Annotation properties
+#################################################################
+
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
 #    Object Properties
 #################################################################
 
+###  http://purl.org/vocab/relationship/childOf
+<http://purl.org/vocab/relationship/childOf> owl:equivalentProperty :hasParent .
+
+
+###  http://purl.org/vocab/relationship/grandchildOf
+<http://purl.org/vocab/relationship/grandchildOf> owl:equivalentProperty :hasGrandParent .
+
+
 ###  http://purl.org/vocab/relationship/siblingOf
-<http://purl.org/vocab/relationship/siblingOf> rdf:type owl:ObjectProperty ,
-                                                        owl:TransitiveProperty .
+<http://purl.org/vocab/relationship/siblingOf> rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/lucas/ontologies/2019/4/foafRelationship#hasBrother
+:hasBrother rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:differentFrom ;
+            rdfs:domain <http://schema.org/Person> ,
+                        <http://www.w3.org/2000/10/swap/pim/contact#Person> ,
+                        <http://xmlns.com/foaf/0.1/Person> ;
+            rdfs:range <http://schema.org/Person> ,
+                       <http://www.w3.org/2000/10/swap/pim/contact#Person> ,
+                       <http://xmlns.com/foaf/0.1/Person> .
+
+
+###  http://www.semanticweb.org/lucas/ontologies/2019/4/foafRelationship#hasGrandParent
+:hasGrandParent rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:differentFrom .
+
+
+###  http://www.semanticweb.org/lucas/ontologies/2019/4/foafRelationship#hasParent
+:hasParent rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:differentFrom ;
+           rdfs:domain <http://schema.org/Person> ,
+                       <http://www.w3.org/2000/10/swap/pim/contact#Person> ,
+                       <http://xmlns.com/foaf/0.1/Person> ;
+           rdfs:range <http://schema.org/Person> ,
+                      <http://www.w3.org/2000/10/swap/pim/contact#Person> ,
+                      <http://xmlns.com/foaf/0.1/Person> .
+
+
+###  http://www.semanticweb.org/lucas/ontologies/2019/4/foafRelationship#hasUncle
+:hasUncle rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:differentFrom ;
+          rdfs:domain <http://schema.org/Person> ,
+                      <http://www.w3.org/2000/10/swap/pim/contact#Person> ,
+                      <http://xmlns.com/foaf/0.1/Person> ;
+          rdfs:range <http://schema.org/Person> ,
+                     <http://www.w3.org/2000/10/swap/pim/contact#Person> ,
+                     <http://xmlns.com/foaf/0.1/Person> .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/lucas/ontologies/2019/4/foafRelationship#isUnderage
+:isUnderage rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:domain <http://schema.org/Person> ,
+                        <http://www.w3.org/2000/10/swap/pim/contact#Person> ,
+                        <http://xmlns.com/foaf/0.1/Person> ;
+            rdfs:range xsd:boolean .
 
 
 #################################################################
@@ -39,11 +105,13 @@
             <http://purl.org/vocab/relationship/childOf> :Anerito ;
             <http://purl.org/vocab/relationship/livesWith> :Guilherme ;
             <http://purl.org/vocab/relationship/siblingOf> :Aurimar ,
-                                                           :Rodrigo .
+                                                           :Rodrigo ;
+            <http://xmlns.com/foaf/0.1/gender> "male" .
 
 
 ###  http://www.semanticweb.org/lucas/ontologies/2019/4/foafRelationship#Aurimar
-:Aurimar rdf:type owl:NamedIndividual .
+:Aurimar rdf:type owl:NamedIndividual ;
+         <http://xmlns.com/foaf/0.1/gender> "male" .
 
 
 ###  http://www.semanticweb.org/lucas/ontologies/2019/4/foafRelationship#Clélia
@@ -56,12 +124,16 @@
 
 
 ###  http://www.semanticweb.org/lucas/ontologies/2019/4/foafRelationship#Geovana
-:Geovana rdf:type owl:NamedIndividual .
+:Geovana rdf:type owl:NamedIndividual ;
+         <http://xmlns.com/foaf/0.1/age> 21 ;
+         <http://xmlns.com/foaf/0.1/gender> "female" .
 
 
 ###  http://www.semanticweb.org/lucas/ontologies/2019/4/foafRelationship#Guilherme
 :Guilherme rdf:type owl:NamedIndividual ;
-           <http://purl.org/vocab/relationship/livesWith> :Júlia .
+           <http://purl.org/vocab/relationship/livesWith> :Júlia ;
+           :hasParent :Anerito_Jr ;
+           <http://xmlns.com/foaf/0.1/age> 10 .
 
 
 ###  http://www.semanticweb.org/lucas/ontologies/2019/4/foafRelationship#Helena
@@ -69,7 +141,8 @@
 
 
 ###  http://www.semanticweb.org/lucas/ontologies/2019/4/foafRelationship#Henrique
-:Henrique rdf:type owl:NamedIndividual .
+:Henrique rdf:type owl:NamedIndividual ;
+          <http://xmlns.com/foaf/0.1/age> 23 .
 
 
 ###  http://www.semanticweb.org/lucas/ontologies/2019/4/foafRelationship#Jeane
@@ -100,7 +173,8 @@
        <http://purl.org/vocab/relationship/friendOf> :Lucas_Pacífico ;
        <http://purl.org/vocab/relationship/grandchildOf> :Helena ;
        <http://purl.org/vocab/relationship/livesWith> :Aurimar ,
-                                                      :Geovana .
+                                                      :Geovana ;
+       <http://xmlns.com/foaf/0.1/gender> "male" .
 
 
 ###  http://www.semanticweb.org/lucas/ontologies/2019/4/foafRelationship#Lucas_Felipe
@@ -123,7 +197,8 @@
 
 ###  http://www.semanticweb.org/lucas/ontologies/2019/4/foafRelationship#Rodrigo
 :Rodrigo rdf:type owl:NamedIndividual ;
-         <http://purl.org/vocab/relationship/childOf> :Anerito .
+         <http://purl.org/vocab/relationship/childOf> :Anerito ;
+         <http://xmlns.com/foaf/0.1/gender> "male" .
 
 
 ###  http://www.semanticweb.org/lucas/ontologies/2019/4/foafRelationship#Rodrigo_Jr
@@ -142,5 +217,233 @@
                       )
 ] .
 
+
+#################################################################
+#    Rules
+#################################################################
+
+:A rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:B rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:C rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:P rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Inferência lógica de parentesco através da propriedade de objeto hasParent"^^xsd:string ;
+   rdfs:label "É avô(avó) de"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> <http://xmlns.com/foaf/0.1/Person> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :A
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#classPredicate> <http://xmlns.com/foaf/0.1/Person> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :B
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> <http://xmlns.com/foaf/0.1/Person> ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> :C
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> owl:differentFrom ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> :A ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument2> :B
+                                                                                      ] ;
+                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#propertyPredicate> owl:differentFrom ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument1> :B ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument2> :C
+                                                                                                 ] ;
+                                                                                       rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                  rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasParent ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#argument1> :A ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#argument2> :B
+                                                                                                            ] ;
+                                                                                                  rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                             rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                         <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasParent ;
+                                                                                                                         <http://www.w3.org/2003/11/swrl#argument1> :B ;
+                                                                                                                         <http://www.w3.org/2003/11/swrl#argument2> :C
+                                                                                                                       ] ;
+                                                                                                             rdf:rest rdf:nil
+                                                                                                           ]
+                                                                                                ]
+                                                                                     ]
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasGrandParent ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :A ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :C
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Inferência lógica de parentesco"^^xsd:string ;
+   rdfs:label "É irmão de"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> <http://xmlns.com/foaf/0.1/Person> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :A
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#classPredicate> <http://xmlns.com/foaf/0.1/Person> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :B
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> <http://xmlns.com/foaf/0.1/Person> ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> :C
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasParent ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> :A ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument2> :C
+                                                                                      ] ;
+                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#propertyPredicate> owl:differentFrom ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument1> :A ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument2> :B
+                                                                                                 ] ;
+                                                                                       rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                  rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#propertyPredicate> owl:differentFrom ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#argument1> :B ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#argument2> :C
+                                                                                                            ] ;
+                                                                                                  rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                             rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                         <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasParent ;
+                                                                                                                         <http://www.w3.org/2003/11/swrl#argument1> :B ;
+                                                                                                                         <http://www.w3.org/2003/11/swrl#argument2> :C
+                                                                                                                       ] ;
+                                                                                                             rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                        rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                                                                                    <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://xmlns.com/foaf/0.1/gender> ;
+                                                                                                                                    <http://www.w3.org/2003/11/swrl#argument1> :B ;
+                                                                                                                                    <http://www.w3.org/2003/11/swrl#argument2> "male"^^xsd:string
+                                                                                                                                  ] ;
+                                                                                                                        rdf:rest rdf:nil
+                                                                                                                      ]
+                                                                                                           ]
+                                                                                                ]
+                                                                                     ]
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasBrother ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :A ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :B
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Inferência lógica de parentesco a partir das relações hasParent e hasBrother"^^xsd:string ;
+   rdfs:label "É tio de (hasBrother)"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> <http://xmlns.com/foaf/0.1/Person> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :A
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#classPredicate> <http://xmlns.com/foaf/0.1/Person> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :B
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> <http://xmlns.com/foaf/0.1/Person> ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> :C
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasParent ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> :A ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument2> :B
+                                                                                      ] ;
+                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasBrother ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument1> :B ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument2> :C
+                                                                                                 ] ;
+                                                                                       rdf:rest rdf:nil
+                                                                                     ]
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasUncle ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :A ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :C
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Inferência de maior de idade a partir da idade"^^xsd:string ;
+   rdfs:label "Maior de Idade"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> <http://xmlns.com/foaf/0.1/Person> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :P
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://xmlns.com/foaf/0.1/age> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :P ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :A
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThan> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first :A ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 17 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :isUnderage ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :P ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> "false"^^xsd:boolean
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

@@ -824,19 +824,19 @@
     <rdf:Description rdf:about="http://purl.org/vocab/relationship/ambivalentOf">
         <skos:historyNote></skos:historyNote>
         <rdfs:label xml:lang="en">Ambivalent Of</rdfs:label>
-        <skos:definition xml:lang="en">A person towards whom this person has mixed feelings or emotions.</skos:definition>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/relationship/"/>
+        <skos:definition xml:lang="en">A person towards whom this person has mixed feelings or emotions.</skos:definition>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/vocab/relationship/antagonistOf">
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/relationship/"/>
         <rdfs:label xml:lang="en">Antagonist Of</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/relationship/"/>
         <skos:historyNote></skos:historyNote>
         <skos:definition xml:lang="en">A person who opposes and contends against this person.</skos:definition>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/vocab/relationship/childOf">
         <rdfs:label xml:lang="en">Child Of</rdfs:label>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/relationship/"/>
         <skos:definition xml:lang="en">A person who was given birth to or nurtured and raised by this person.</skos:definition>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/relationship/"/>
         <skos:historyNote></skos:historyNote>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/vocab/relationship/enemyOf">
@@ -846,8 +846,8 @@
         <skos:definition xml:lang="en">A person towards whom this person feels hatred, intends injury to, or opposes the interests of.</skos:definition>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/vocab/relationship/friendOf">
-        <skos:definition xml:lang="en">A person who shares mutual friendship with this person.</skos:definition>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/relationship/"/>
+        <skos:definition xml:lang="en">A person who shares mutual friendship with this person.</skos:definition>
         <skos:historyNote></skos:historyNote>
         <rdfs:label xml:lang="en">Friend Of</rdfs:label>
     </rdf:Description>
@@ -865,8 +865,8 @@
         <skos:definition xml:lang="en">A person who has given birth to or nurtured and raised this person.</skos:definition>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/vocab/relationship/siblingOf">
+        <rdfs:label xml:lang="en">isSiblingOf</rdfs:label>
         <skos:historyNote></skos:historyNote>
-        <rdfs:label xml:lang="en">Sibling Of</rdfs:label>
         <skos:definition xml:lang="en">A person having one or both parents in common with this person.</skos:definition>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/vocab/relationship/"/>
     </rdf:Description>
